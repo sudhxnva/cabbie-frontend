@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { BookingRequest, RankedResult, ConfirmRequest } from '../types/booking';
+import type { BookingRequest, RankedResult, ConfirmRequest } from '../types/booking';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 

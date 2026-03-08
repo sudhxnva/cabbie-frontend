@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MapPin, Navigation, Send } from 'lucide-react';
-import { BookingRequest } from '../../types/booking';
+import type { BookingRequest } from '../../types/booking';
 
 interface BookingFormProps {
   onSubmit: (request: BookingRequest) => void;

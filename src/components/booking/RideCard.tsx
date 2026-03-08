@@ -1,6 +1,6 @@
 import React from 'react';
 import { Clock, DollarSign, ExternalLink } from 'lucide-react';
-import { RankedResult } from '../../types/booking';
+import type { RankedResult } from '../../types/booking';
 
 interface RideCardProps {
   result: RankedResult;
