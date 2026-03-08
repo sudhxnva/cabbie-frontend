@@ -12,6 +12,11 @@ struct ChatView: View {
             inputBar
         }
         .background(Color(.systemBackground))
+        .sheet(item: $viewModel.bookingConfirmation) { confirmation in
+            NavigationStack {
+                BookingConfirmationView(viewModel: BookingViewModel(confirmation: confirmation))
+            }
+        }
     }
 
     private var header: some View {

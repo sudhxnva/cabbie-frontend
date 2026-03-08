@@ -1,11 +1,19 @@
 import Foundation
 
 struct CabOption: Identifiable, Codable, Equatable {
-    let id = UUID()
+    let id: UUID
     let name: String
     let price: String
     let etaMinutes: Int
     let appName: String
+
+    init(id: UUID = UUID(), name: String, price: String, etaMinutes: Int, appName: String) {
+        self.id = id
+        self.name = name
+        self.price = price
+        self.etaMinutes = etaMinutes
+        self.appName = appName
+    }
 }
 
 extension CabOption {

@@ -1,16 +1,23 @@
 import Foundation
 import Combine
 
+@MainActor
 final class ChatViewModel: ObservableObject {
     @Published private(set) var messages: [ChatMessage] = []
     @Published var rideOptions: [CabOption] = []
+    @Published var bookingConfirmation: BookingConfirmation?
     @Published var inputText = ""
     @Published var voiceState: VoiceOrbView.OrbState = .idle
 
     private let elevenLabsService: ElevenLabsService
+    private let backendAPI: BackendAPI
 
-    init(elevenLabsService: ElevenLabsService = ElevenLabsService()) {
+    init(
+        elevenLabsService: ElevenLabsService = ElevenLabsService(),
+        backendAPI: BackendAPI = BackendAPI()
+    ) {
         self.elevenLabsService = elevenLabsService
+        self.backendAPI = backendAPI
         bindService()
         elevenLabsService.startConversation()
         rideOptions = CabOption.sampleData
@@ -36,6 +43,14 @@ final class ChatViewModel: ObservableObject {
 
     func bookRide(_ option: CabOption) {
         elevenLabsService.sendText("Book \(option.name) with \(option.appName) for \(option.price).")
+        Task {
+            do {
+                let confirmation = try await backendAPI.confirmBooking(BookingConfirmRequest(optionId: option.id))
+                bookingConfirmation = confirmation
+            } catch {
+                elevenLabsService.sendText("Could not confirm booking yet. Please try again.")
+            }
+        }
     }
 
     private func bindService() {

@@ -16,6 +16,10 @@
 		A10000000000000000000007 /* CabOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000017 /* CabOption.swift */; };
 		A10000000000000000000008 /* ElevenLabsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000018 /* ElevenLabsService.swift */; };
 		A10000000000000000000009 /* CabOptionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000019 /* CabOptionCard.swift */; };
+		A1000000000000000000000A /* BookingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000001A /* BookingModels.swift */; };
+		A1000000000000000000000B /* BackendAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000001B /* BackendAPI.swift */; };
+		A1000000000000000000000C /* BookingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000001C /* BookingViewModel.swift */; };
+		A1000000000000000000000D /* BookingConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000001D /* BookingConfirmationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,10 @@
 		A10000000000000000000017 /* CabOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabOption.swift; sourceTree = "<group>"; };
 		A10000000000000000000018 /* ElevenLabsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevenLabsService.swift; sourceTree = "<group>"; };
 		A10000000000000000000019 /* CabOptionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabOptionCard.swift; sourceTree = "<group>"; };
+		A1000000000000000000001A /* BookingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingModels.swift; sourceTree = "<group>"; };
+		A1000000000000000000001B /* BackendAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendAPI.swift; sourceTree = "<group>"; };
+		A1000000000000000000001C /* BookingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewModel.swift; sourceTree = "<group>"; };
+		A1000000000000000000001D /* BookingConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingConfirmationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +91,7 @@
 			children = (
 				A10000000000000000000012 /* ChatMessage.swift */,
 				A10000000000000000000017 /* CabOption.swift */,
+				A1000000000000000000001A /* BookingModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -91,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				A10000000000000000000013 /* ChatViewModel.swift */,
+				A1000000000000000000001C /* BookingViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -99,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				A10000000000000000000014 /* ChatView.swift */,
+				A1000000000000000000001D /* BookingConfirmationView.swift */,
 				A10000000000000000000027 /* Components */,
 			);
 			path = Views;
@@ -118,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				A10000000000000000000018 /* ElevenLabsService.swift */,
+				A1000000000000000000001B /* BackendAPI.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -199,6 +211,10 @@
 				A10000000000000000000007 /* CabOption.swift in Sources */,
 				A10000000000000000000008 /* ElevenLabsService.swift in Sources */,
 				A10000000000000000000009 /* CabOptionCard.swift in Sources */,
+				A1000000000000000000000A /* BookingModels.swift in Sources */,
+				A1000000000000000000000B /* BackendAPI.swift in Sources */,
+				A1000000000000000000000C /* BookingViewModel.swift in Sources */,
+				A1000000000000000000000D /* BookingConfirmationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
