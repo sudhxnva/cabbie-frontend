@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4075B37B2F5D741000716B3B /* ElevenLabs in Frameworks */ = {isa = PBXBuildFile; productRef = 4075B37A2F5D741000716B3B /* ElevenLabs */; };
+		4075B37E2F5D799900716B3B /* ElevenLabsComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 4075B37D2F5D799900716B3B /* ElevenLabsComponents */; };
 		A10000000000000000000001 /* CabbieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000011 /* CabbieApp.swift */; };
 		A10000000000000000000002 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000012 /* ChatMessage.swift */; };
 		A10000000000000000000003 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000013 /* ChatViewModel.swift */; };
@@ -44,6 +46,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4075B37B2F5D741000716B3B /* ElevenLabs in Frameworks */,
+				4075B37E2F5D799900716B3B /* ElevenLabsComponents in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +182,10 @@
 				Base,
 			);
 			mainGroup = A10000000000000000000020;
+			packageReferences = (
+				4075B3792F5D741000716B3B /* XCRemoteSwiftPackageReference "elevenlabs-swift-sdk" */,
+				4075B37C2F5D799900716B3B /* XCRemoteSwiftPackageReference "components-swift" */,
+			);
 			productRefGroup = A10000000000000000000022 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -231,6 +239,7 @@
 				DEVELOPMENT_TEAM = WP49QHGAC6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Cabbie;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Cabbie uses your microphone for voice conversations with the ride assistant.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -260,6 +269,7 @@
 				DEVELOPMENT_TEAM = WP49QHGAC6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Cabbie;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Cabbie uses your microphone for voice conversations with the ride assistant.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -356,6 +366,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4075B3792F5D741000716B3B /* XCRemoteSwiftPackageReference "elevenlabs-swift-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elevenlabs/elevenlabs-swift-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.16;
+			};
+		};
+		4075B37C2F5D799900716B3B /* XCRemoteSwiftPackageReference "components-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elevenlabs/components-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4075B37A2F5D741000716B3B /* ElevenLabs */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4075B3792F5D741000716B3B /* XCRemoteSwiftPackageReference "elevenlabs-swift-sdk" */;
+			productName = ElevenLabs;
+		};
+		4075B37D2F5D799900716B3B /* ElevenLabsComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4075B37C2F5D799900716B3B /* XCRemoteSwiftPackageReference "components-swift" */;
+			productName = ElevenLabsComponents;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A10000000000000000000050 /* Project object */;
 }
