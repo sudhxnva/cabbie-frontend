@@ -41,6 +41,22 @@ struct ChatView: View {
                 ForEach(viewModel.messages) { message in
                     ChatBubble(message: message)
                 }
+
+                if !viewModel.rideOptions.isEmpty {
+                    VStack(alignment: .leading, spacing: 10) {
+                        Text("Ride Options")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+
+                        ForEach(viewModel.rideOptions) { option in
+                            CabOptionCard(option: option) { selectedOption in
+                                viewModel.bookRide(selectedOption)
+                            }
+                        }
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.top, 8)
+                }
             }
             .padding(16)
         }

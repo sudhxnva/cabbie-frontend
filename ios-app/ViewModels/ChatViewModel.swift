@@ -2,32 +2,59 @@ import Foundation
 import Combine
 
 final class ChatViewModel: ObservableObject {
-    @Published var messages: [ChatMessage] = [
-        ChatMessage(sender: .user, text: "I need a cab to the airport.", timestamp: .now),
-        ChatMessage(sender: .agent, text: "Searching Uber and Lyft...", timestamp: .now)
-    ]
+    @Published private(set) var messages: [ChatMessage] = []
+    @Published var rideOptions: [CabOption] = []
     @Published var inputText = ""
     @Published var voiceState: VoiceOrbView.OrbState = .idle
+
+    private let elevenLabsService: ElevenLabsService
+
+    init(elevenLabsService: ElevenLabsService = ElevenLabsService()) {
+        self.elevenLabsService = elevenLabsService
+        bindService()
+        elevenLabsService.startConversation()
+        rideOptions = CabOption.sampleData
+    }
 
     func sendMessage() {
         let trimmed = inputText.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmed.isEmpty else { return }
 
-        messages.append(ChatMessage(sender: .user, text: trimmed, timestamp: .now))
+        elevenLabsService.sendText(trimmed)
+        rideOptions = CabOption.sampleData
         inputText = ""
-
-        // Stubbed agent response for now.
-        messages.append(ChatMessage(sender: .agent, text: "Got it. Looking up rides.", timestamp: .now))
     }
 
     func cycleVoiceState() {
-        switch voiceState {
-        case .idle:
-            voiceState = .listening
-        case .listening:
-            voiceState = .speaking
-        case .speaking:
-            voiceState = .idle
+        switch elevenLabsService.conversationState {
+        case .idle, .stopped:
+            elevenLabsService.startConversation()
+        case .listening, .speaking:
+            elevenLabsService.stopConversation()
         }
+    }
+
+    func bookRide(_ option: CabOption) {
+        elevenLabsService.sendText("Book \(option.name) with \(option.appName) for \(option.price).")
+    }
+
+    private func bindService() {
+        elevenLabsService.$messages
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$messages)
+
+        elevenLabsService.$conversationState
+            .receive(on: DispatchQueue.main)
+            .map { state in
+                switch state {
+                case .idle, .stopped:
+                    return VoiceOrbView.OrbState.idle
+                case .listening:
+                    return VoiceOrbView.OrbState.listening
+                case .speaking:
+                    return VoiceOrbView.OrbState.speaking
+                }
+            }
+            .assign(to: &$voiceState)
     }
 }

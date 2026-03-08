@@ -13,6 +13,9 @@
 		A10000000000000000000004 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000014 /* ChatView.swift */; };
 		A10000000000000000000005 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000015 /* ChatBubble.swift */; };
 		A10000000000000000000006 /* VoiceOrbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000016 /* VoiceOrbView.swift */; };
+		A10000000000000000000007 /* CabOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000017 /* CabOption.swift */; };
+		A10000000000000000000008 /* ElevenLabsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000018 /* ElevenLabsService.swift */; };
+		A10000000000000000000009 /* CabOptionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000019 /* CabOptionCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		A10000000000000000000014 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		A10000000000000000000015 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
 		A10000000000000000000016 /* VoiceOrbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOrbView.swift; sourceTree = "<group>"; };
+		A10000000000000000000017 /* CabOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabOption.swift; sourceTree = "<group>"; };
+		A10000000000000000000018 /* ElevenLabsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevenLabsService.swift; sourceTree = "<group>"; };
+		A10000000000000000000019 /* CabOptionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabOptionCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +56,7 @@
 				A10000000000000000000023 /* App */,
 				A10000000000000000000024 /* Models */,
 				A10000000000000000000025 /* ViewModels */,
+				A10000000000000000000028 /* Services */,
 				A10000000000000000000026 /* Views */,
 			);
 			path = "ios-app";
@@ -75,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				A10000000000000000000012 /* ChatMessage.swift */,
+				A10000000000000000000017 /* CabOption.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -101,8 +109,17 @@
 			children = (
 				A10000000000000000000015 /* ChatBubble.swift */,
 				A10000000000000000000016 /* VoiceOrbView.swift */,
+				A10000000000000000000019 /* CabOptionCard.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000028 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000018 /* ElevenLabsService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +196,9 @@
 				A10000000000000000000004 /* ChatView.swift in Sources */,
 				A10000000000000000000005 /* ChatBubble.swift in Sources */,
 				A10000000000000000000006 /* VoiceOrbView.swift in Sources */,
+				A10000000000000000000007 /* CabOption.swift in Sources */,
+				A10000000000000000000008 /* ElevenLabsService.swift in Sources */,
+				A10000000000000000000009 /* CabOptionCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
